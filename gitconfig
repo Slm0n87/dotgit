@@ -1,0 +1,32 @@
+[user]
+  name = YOURNAMEHERE
+  email = YOUREMAILHERE
+[merge]
+  tool = vimdiff
+[color]
+  ui = true
+[core]
+  excludesfile = /home/sstier/.gitignore
+  editor = vim
+[alias]
+  st = status
+  glog = log --all --decorate --graph
+  co = checkout
+  br = branch
+  logf = log --follow
+  stats = shortlog -s -n
+  lg = log --pretty=format:'%<(15)%ar | %Cred%<(15)%an%Creset | %Cblue%h%Creset | %s'
+  lgme = log --author Simon --since 'last monday'
+  diffw =  diff --word-diff-regex=.
+  diffdev =  "! git diff $(git merge-base dev HEAD) HEAD"
+  pullall =  "! set -x; git fetch --all; for branch in live prelive dev; do git checkout \"$branch\"      || exit 1; git rebase \"origin/$branch\" || exit 1; done"
+  p = pull --rebase
+  branchdelmerged = "! git branch --merged | egrep -v \"(^\\*|master|dev)\" | xargs git branch -d"
+[log]
+  date = local
+[push]
+  default = current
+[svn]
+  rmdir = true
+[gc]
+  auto = 0
