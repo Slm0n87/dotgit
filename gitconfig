@@ -6,7 +6,7 @@
 [color]
   ui = true
 [core]
-  excludesfile = /home/sstier/.gitignore
+  excludesfile = ~/.gitignore
   editor = vim
 [alias]
   st = status
@@ -21,6 +21,7 @@
   diffdev =  "! git diff $(git merge-base dev HEAD) HEAD"
   pullall =  "! set -x; git fetch --all; for branch in live prelive dev; do git checkout \"$branch\"      || exit 1; git rebase \"origin/$branch\" || exit 1; done"
   p = pull --rebase
+  pa = pull --rebase --autostash
   branchdelmerged = "! git branch --merged | egrep -v \"(^\\*|master|dev)\" | xargs git branch -d"
 [log]
   date = local
