@@ -31,3 +31,5 @@
   rmdir = true
 [gc]
   auto = 0
+[includeIf "gitdir:~/prv/"]
+    path = ~/prv/.gitconfig
