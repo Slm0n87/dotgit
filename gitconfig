@@ -23,6 +23,7 @@
   p = pull --rebase
   pa = pull --rebase --autostash
   branchdelmerged = "! git branch --merged | egrep -v \"(^\\*|master|dev)\" | xargs git branch -d"
+  sp = submodule update --remote --recursive
 [log]
   date = local
 [push]
